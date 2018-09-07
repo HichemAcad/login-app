@@ -10,7 +10,6 @@ import { FormControl } from '@angular/forms';
 })
 export class AppComponent {
   isAdminActive = false;
-  backgroundColor = environment.navBackgroundColor;
 
   constructor (public authService: AuthService) {}
 

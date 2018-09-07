@@ -6,9 +6,6 @@
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-          <a class="nav-link">{{backgroundColor}}</a>
-        </li>
-      <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/login']" *ngIf="! authService.isAuthentified()">LogIn</a>
       </li>
       <li class="nav-item">
