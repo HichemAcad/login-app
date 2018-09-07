@@ -1,0 +1,24 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" [routerLink]="['/']">
+    <img src="../favicon.ico" alt="Hichem Logo" width="30" height="30" class="d-inline-block align-top">
+    Hichem
+  </a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+          <a class="nav-link">{{backgroundColor}}</a>
+        </li>
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/login']" *ngIf="! authService.isAuthentified()">LogIn</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"[routerLink]="['/admin']" *ngIf="authService.isAdmin()">Admin</a>
+      </li>
+      <li class="nav-item" *ngIf="authService.isAuthentified()">
+        <a class="nav-link" [routerLink]="['/']" (click)="logOut()">LogOut</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

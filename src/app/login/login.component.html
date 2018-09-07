@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <form #loginForm="ngForm" (submit)="onSubmit(loginForm)">
+          <legend>Login</legend>
+          
+          <div class="alert alert-danger" *ngIf="! validInfos">
+            <strong>Error</strong> Incorrect UserName and/or Password.
+          </div>
+          
+          <div class="form-group">
+            <label for="userName">label</label>
+            <input ngModel appNospace #userName="ngModel" required minlength="6" name="userName" type="text" class="form-control" id="userName" placeholder="UserName">
+            <div class="alert alert-danger" *ngIf="userName.touched && userName.invalid">
+              <div *ngIf="userName.errors.required">UserName is required.</div>
+              <div *ngIf="userName.errors.minlength">UserName must be {{userName.errors.minlength.requiredLength}} characters.</div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">label</label>
+            <input ngModel required minlength="6" name="password" #password="ngModel" type="password" class="form-control" id="password" placeholder="Password">
+            <div class="alert alert-danger" *ngIf="password.touched && password.invalid">
+                <div *ngIf="password.errors.required">Password is required.</div>
+                <div *ngIf="password.errors.minlength">Pssword must be {{password.errors.minlength.requiredLength}} characters.</div>
+              </div>
+          </div>
+          <button type="submit" [disabled]="loginForm.invalid || ! canSubmit" class="btn btn-primary btn-group-lg btn-block">Submit</button>
+        </form>
+  
+      </div>
+    </div>
+  </div>
+  

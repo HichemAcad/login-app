@@ -1,0 +1,12 @@
+.row {
+    height: 80vh;
+}
+.col-xl-12 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col-xl-12 > form {
+    flex-basis: 50%;
+}
