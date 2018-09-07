@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy:ngh": "ng build --prod --base-href 'https://HichemAcad.github.io/login-app/' && ngh --dir dist/log"
+    "deploy:ngh": "ng build --prod --base-href 'https://HichemAcad.github.io/login-app/' && ngh --dir dist/login"
   },
   "private": true,
   "dependencies": {
